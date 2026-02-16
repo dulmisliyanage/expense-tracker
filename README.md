@@ -102,3 +102,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is open-source and free to use.
 
+## 🌐 Live Demo
+
+Check out the fully working project here: [Expense Tracker Live Demo](https://dulmisliyanage.github.io/expense-tracker/)
+
