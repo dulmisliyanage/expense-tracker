@@ -1,0 +1,615 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #0a192f;
+    /* Deep Dark Navy */
+    --card-bg: #112240;
+    /* Lighter Navy for cards */
+    --text-main: #ccd6f6;
+    /* Lightest Slate */
+    --text-secondary: #8892b0;
+    /* Slate */
+    --accent-color: #64ffda;
+    /* Teal/Cyan accent for pop */
+    --accent-hover: #4db6ac;
+    /* Darker Teal for hover */
+    --income-color: #64ffda;
+    /* Matching accent for positive */
+    --expense-color: #ff6b6b;
+    /* Soft Red */
+    --section-bg-1: #172a45;
+    /* Slightly lighter than card */
+    --section-bg-2: #0b1623;
+    /* Darker/different shade */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+/* Auth Pages Syles */
+.auth-body {
+    justify-content: center;
+    /* Center vertically for auth pages */
+}
+
+.auth-container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    /* Stronger shadow */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Subtle border for definition */
+}
+
+.auth-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.auth-header h2 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.auth-header h3 {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+    border: none;
+    display: block;
+    padding: 0;
+}
+
+.auth-form .form-control {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Lighter border */
+    background-color: rgba(255, 255, 255, 0.02);
+    /* Slight fill */
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.auth-footer {
+    margin-top: 25px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.auth-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #020c1b;
+    /* Darker contrasting background */
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    /* Subtle accent border */
+}
+
+.nav-content {
+    width: 100%;
+    max-width: 1000px;
+    /* Match app container */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    /* Center everything initially */
+    align-items: center;
+    position: relative;
+}
+
+.navbar h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--accent-color);
+    /* Contrasting accent color */
+    letter-spacing: 1px;
+    position: absolute;
+    /* Center absolute */
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+}
+
+.user-actions {
+    margin-left: auto;
+    /* Push to right */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+    /* Ensure clickable */
+}
+
+#user-display {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar h1 {
+        position: static;
+        transform: none;
+        margin-bottom: 5px;
+        order: -1;
+        /* Ensure title is on top */
+    }
+
+    .user-actions {
+        margin-left: 0;
+        width: 100%;
+        justify-content: space-between;
+        /* Spread user and logout */
+    }
+}
+
+/* App Container (Dashboard Box) */
+.app-container {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    width: 95%;
+    max-width: 1000px;
+    /* Wider than auth */
+    margin: 0 auto 50px;
+    /* Bottom spacing */
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+/* Old .container removal/override mostly */
+.container {
+    /* Keeping simplified if used elsewhere, but .app-container replaces usage */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Main Container adjustment */
+.container {
+    margin: 0 auto 30px;
+    width: 400px;
+    max-width: 90%;
+}
+
+h1 {
+    letter-spacing: 1px;
+    margin: 0;
+    color: var(--text-main);
+}
+
+h3 {
+    border-bottom: 1px solid var(--text-secondary);
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+    color: var(--text-main);
+}
+
+/* Dashboard Styles */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.balance-card {
+    background: linear-gradient(135deg, var(--card-bg) 0%, #1d3557 100%);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.balance-card h3 {
+    margin: 0 0 10px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    padding: 0;
+}
+
+.balance-card h2 {
+    font-size: 2.8rem;
+    margin: 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.income .card-icon {
+    background-color: rgba(100, 255, 218, 0.1);
+    color: var(--income-color);
+}
+
+.expense .card-icon {
+    background-color: rgba(255, 107, 107, 0.1);
+    color: var(--expense-color);
+}
+
+.card h3 {
+    margin: 0 0 5px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    border: none;
+    padding: 0;
+}
+
+.card p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.money {
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.money.plus {
+    color: var(--income-color);
+}
+
+.money.minus {
+    color: var(--expense-color);
+}
+
+label {
+    display: inline-block;
+    margin: 10px 0;
+    color: var(--text-secondary);
+}
+
+input[type='text'],
+input[type='number'],
+input[type='date'],
+select {
+    background-color: var(--bg-color);
+    /* Dark input bg */
+    border: 1px solid var(--text-secondary);
+    color: var(--text-main);
+    border-radius: 5px;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    font-family: inherit;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Fix date input icon color filter if needed, but default is usually ok or system dependent */
+
+.btn {
+    cursor: pointer;
+    background-color: var(--accent-color);
+    box-shadow: var(--shadow-sm);
+    color: var(--bg-color);
+    /* Dark text on bright accent */
+    font-weight: bold;
+    border: 0;
+    display: block;
+    font-size: 16px;
+    margin: 20px 0 30px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.1s ease-in-out, opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+/* Controls (Search & Filter) */
+.controls {
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    margin-bottom: 15px;
+    border-radius: 20px;
+    /* Rounded search bar */
+    padding: 12px 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--text-secondary);
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.dropdown-filters {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dropdown-filters select {
+    flex: 1;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.btn-small {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto 20px;
+    width: auto;
+}
+
+.btn-small:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.filter-label {
+    cursor: pointer;
+    position: relative;
+}
+
+.filter-label input {
+    display: none;
+    /* Hide default radio */
+}
+
+/* Custom Filter Button Style */
+.filter-label span {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    color: var(--text-secondary);
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--text-secondary);
+    display: inline-block;
+}
+
+.filter-label input:checked+span {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border-color: var(--accent-color);
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(100, 255, 218, 0.4);
+}
+
+.form-container {
+    background-color: var(--section-bg-2);
+    /* Darker section for Input */
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.list-container {
+    background-color: var(--section-bg-1);
+    /* Lighter section for List */
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.list li {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-sm);
+    color: var(--text-main);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.list li.plus {
+    border-right: 5px solid var(--income-color);
+}
+
+.list li.minus {
+    border-right: 5px solid var(--expense-color);
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: var(--expense-color);
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-100%, -50%);
+    opacity: 0;
+    margin-left: 5px;
+    /* space from edge if needed */
+}
+
+/* Adjust delete btn slightly */
+.delete-btn {
+    transform: translate(-120%, -50%);
+}
+
+.list li:hover .delete-btn,
+.list li:hover .edit-btn {
+    opacity: 1;
+}
+
+.date-small {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.category-small {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: 0 5px;
+}

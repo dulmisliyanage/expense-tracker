@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1>Expense Tracker</h1>
+            <div class="user-actions">
+                <span id="user-display"></span>
+                <button id="logout-btn" class="btn-small">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-container">
+        <div class="dashboard">
+            <div class="balance-card">
+                <h3>Your Balance</h3>
+                <h2 id="balance">LKR 0.00</h2>
+            </div>
+            <div class="summary-cards">
+                <div class="card income">
+                    <div class="card-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div>
+                        <h3>Income</h3>
+                        <p id="money-plus" class="money plus">+LKR 0.00</p>
+                    </div>
+                </div>
+                <div class="card expense">
+                    <div class="card-icon">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div>
+                        <h3>Expense</h3>
+                        <p id="money-minus" class="money minus">-LKR 0.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="form-container">
+                <h3>Add New Transaction</h3>
+                <form id="form">
+                    <div class="form-control">
+                        <label for="text">Text</label>
+                        <input type="text" id="text" placeholder="Enter text..." />
+                    </div>
+                    <div class="form-control">
+                        <label for="category">Category</label>
+                        <input type="text" id="category" placeholder="Enter category..." />
+                    </div>
+                    <div class="form-control">
+                        <label for="type">Type</label>
+                        <select id="type">
+                            <option value="income">Income (+)</option>
+                            <option value="expense">Expense (-)</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" placeholder="Enter amount..." min="0" />
+                    </div>
+                    <!-- Date input for better record keeping -->
+                    <div class="form-control">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" />
+                    </div>
+                    <button class="btn">Add transaction</button>
+                </form>
+            </div>
+
+            <div class="list-container">
+                <h3>History</h3>
+
+                <div class="controls">
+                    <div class="search-container">
+                        <input type="text" id="search" placeholder="Search transactions..." />
+                    </div>
+
+                    <div class="filter-group">
+                        <div class="filter-container">
+                            <label class="filter-label">
+                                <input type="radio" name="filter" value="all" checked>
+                                <span>All</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="radio" name="filter" value="income">
+                                <span>Income</span>
+                            </label>
+                            <label class="filter-label">
+                                <input type="radio" name="filter" value="expense">
+                                <span>Expense</span>
+                            </label>
+                        </div>
+
+                        <div class="dropdown-filters">
+                            <select id="sort">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="highest">Amount: High-Low</option>
+                                <option value="lowest">Amount: Low-High</option>
+                            </select>
+
+                            <select id="period">
+                                <option value="all">All Time</option>
+                                <option value="this-month">This Month</option>
+                                <option value="last-month">Last Month</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button id="export-btn" class="btn-small">Export to CSV</button>
+                </div>
+
+                <ul id="list" class="list">
+                    <!-- Transactions will be added here dynamically -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
