@@ -11,7 +11,7 @@ A modern, full-stack expense tracking application designed to help users manage 
 -   **Data Persistence**: All data is securely stored in a MongoDB database (users only see their own data).
 -   **Responsive Design**: Fully responsive UI that works seamlessly on Desktop and Mobile.
 
-### Advanced Features (V3)
+### Advanced Features 
 -   **Search & Filter**: 
     -   Search transactions by keyword.
     -   Filter by Type (Income/Expense).
