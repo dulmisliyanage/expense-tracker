@@ -1,110 +1,104 @@
-# Expense Tracker
+# Full Stack Expense Tracker
 
-A **full-stack Expense Tracker** built with **MongoDB, Express, Node.js, and Vanilla JS (React-ish style)**.  
-Users can register, login, and manage their transactions securely with **JWT authentication**.
+A modern, full-stack expense tracking application designed to help users manage their finances efficiently. Built with a robust **Node.js/Express** backend and a responsive **Vanilla JavaScript/CSS** frontend, featuring secure **JWT Authentication** and **MongoDB** data persistence.
 
----
+## 🚀 Features
 
-## Features
+### Core Functionality
+-   **User Authentication**: Secure Sign Up and Login with JWT (JSON Web Tokens).
+-   **Transaction Management**: Add, View, and Delete income and expense records.
+-   **Dashboard Overview**: Real-time balance calculation with total Income & Expense summary.
+-   **Data Persistence**: All data is securely stored in a MongoDB database (users only see their own data).
+-   **Responsive Design**: Fully responsive UI that works seamlessly on Desktop and Mobile.
 
-- User Authentication
-  - Signup / Login with hashed passwords
-  - JWT-based session management
-- Transaction Management (CRUD)
-  - Add, update, delete, and view transactions
-  - Transactions are linked to each user (secure)
-- Frontend Integration
-  - Vanilla JS frontend interacting with backend API
-  - Dashboard with transaction list
-  - Login/Logout functionality
-- Secure API Endpoints
-  - Only authenticated users can access their own transactions
-- Future-ready structure for adding charts, categories, and summaries
+### Advanced Features (V3)
+-   **Search & Filter**: 
+    -   Search transactions by keyword.
+    -   Filter by Type (Income/Expense).
+    -   Filter by Date (This Month/Last Month/All Time).
+-   **Sorting**: Sort transactions by Amount, Date, or Newest.
+-   **CSV Export**: Export your transaction history to a CSV file for external analysis.
 
----
+## 🛠️ Tech Stack
 
-## Technologies Used
+-   **Frontend**: HTML5, CSS3 (Custom Properties & Flexbox/Grid), Vanilla JavaScript (ES6+).
+-   **Backend**: Node.js, Express.js.
+-   **Database**: MongoDB (Atlas).
+-   **Authentication**: JSON Web Tokens (JWT), bcryptjs (password hashing).
+-   **Tools**: VS Code, Git.
 
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** Node.js, Express.js  
-- **Database:** MongoDB (Atlas)  
-- **Authentication:** JWT, bcryptjs  
-- **Tools:** Git, GitHub, Postman
+## 📂 Project Structure
 
----
-
-## Folder Structure
-
+```
 expense-tracker/
+├── expense-tracker-api/   # Backend (Node.js/Express)
+│   ├── config/            # Database configuration
+│   ├── models/            # Mongoose models (User, Transaction)
+│   ├── routes/            # API routes (Auth, Transactions)
+│   ├── middleware/        # Auth middleware
+│   └── server.js          # Entry point
 │
-├── frontend/ # HTML, CSS, JS files
-│ ├── index.html
-│ ├── login.html
-│ ├── register.html
-│ └── app.js
-│
-├── expense-tracker-api/ # Backend
-│ ├── models/ # User.js, Transaction.js
-│ ├── routes/ # auth.js, transactions.js
-│ ├── middleware/ # auth.js
-│ └── server.js
-│
-├── .env # Environment variables
-└── README.md
+├── index.html             # Main Dashboard
+├── login.html             # Login Page
+├── register.html          # Registration Page
+├── style.css              # Global Styles
+├── app.js                 # Frontend Logic
+└── README.md              # Project Documentation
+```
 
+## ⚙️ Installation & Setup
 
----
+### Prerequisites
+-   Node.js installed on your machine.
+-   A MongoDB Atlas account (or local MongoDB).
 
-## Getting Started
-
-### 1. Clone the repo
-
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/dulmisliyanage/expense-tracker.git
-cd expense-tracker/expense-tracker-api
-2. Install dependencies
+git clone <your-repo-url>
+cd expense-tracker
+```
+
+### 2. Backend Setup
+Navigate to the backend folder and install dependencies:
+```bash
+cd expense-tracker-api
 npm install
-3. Configure Environment Variables
-Create a .env file in the backend folder:
+```
 
-MONGODB_URI=your_mongodb_connection_string
+Create a `.env` file in `expense-tracker-api/` with your credentials:
+```env
+NODE_ENV=development
 PORT=5000
-JWT_SECRET=your_jwt_secret
-4. Start the backend server
+MONGO_URI=<your_mongodb_connection_string>
+JWT_SECRET=<your_jwt_secret_key>
+```
+
+Start the backend server:
+```bash
+npm run server
+# or
 node server.js
-5. Open frontend
-Open frontend/index.html in your browser.
+```
+*The server should now be running on `http://localhost:5000`.*
 
-Register a new user
+### 3. Frontend Setup
+The frontend is built with static HTML/JS files. You can simply open `index.html` (or `login.html`) in your browser.
 
-Login
+For a better experience (and to avoid CORS issues if not configured), use a live server extension (like Live Server in VS Code) to serve the root directory.
 
-Add, update, and delete transactions
+## 🔑 Usage
 
-API Endpoints
-Auth
-Method	Endpoint	Description
-POST	/api/auth/signup	Register new user
-POST	/api/auth/login	Login and receive JWT token
-Transactions
-Method	Endpoint	Description
-GET	/api/transactions	Get all transactions for logged-in user
-POST	/api/transactions	Add new transaction
-PUT	/api/transactions/:id	Update a transaction
-DELETE	/api/transactions/:id	Delete a transaction
-All transaction endpoints require JWT in the Authorization header:
+1.  Open `login.html`.
+2.  **Register** a new account.
+3.  **Login** with your credentials.
+4.  You will be redirected to the **Dashboard**.
+5.  Start adding transactions! All data is saved to your account.
 
-Authorization: Bearer <your-token>
-License
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
 This project is open-source and free to use.
 
-Future Improvements
-Add charts (monthly spending, category breakdown)
-
-Category selection for transactions
-
-Password reset and email verification
-
-Responsive UI / Mobile-friendly dashboard
-
-Developed by Sawindi Dulmi 💙
